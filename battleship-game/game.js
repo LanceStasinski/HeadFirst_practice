@@ -18,10 +18,17 @@ while (isSunk == false) {
     guess ++;
     if (guess == location1 || guess == location2 || guess == location3) {
       hits ++;
-    }
-    if (hits == 3) {
-      isSunk = true;
-      alert('You sank my battleship!')
+      alert('HIT!')
+      if (hits == 3) {
+        isSunk = true;
+        alert('You sank my battleship!')
+      }
+    } else {
+      alert('MISS')
     }
   }
 }
+
+const stats = `You took ${guesses} to sink the battleship,
+which means your shooting accuracy was ${3/guesses}`;
+alert(stats)
