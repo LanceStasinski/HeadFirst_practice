@@ -9,7 +9,6 @@ const costs = [.25, .27, .25, .25, .25, .25,
                .20, .25, .30, .25, .24, .25,
                .25, .25, .27, .25, .26, .29]
 
-
 const printAndGetHighScore = (scores) => {
   let highScore = 0;
   for (let i = 0; i < scores.length; i++) {
@@ -31,8 +30,25 @@ const getHighestScores = (scores, highScore) => {
   return highestScores;
 }
 
+const getMostCostEffectiveSolution = (scores, costs, highScore) => {
+  let cost = 100;
+  let index;
+  for (let i = 0; i < scores.length; i++){
+    if (scores[i] == highScore) {
+      if (cost > costs[i]) {
+        index = i;
+        cost = costs[i]
+      }
+    }
+  }
+  return index;
+}
+
 const highScore = printAndGetHighScore(scores)
 const highestScores = getHighestScores(scores, highScore)
+const mostCostEffective = getMostCostEffectiveSolution(scores, costs, highScore)
+
 console.log(`Tests: ${scores.length}`)
 console.log(`Highest score: ${highScore}`)
 console.log(`Solutions with the highest scores: ${highestScores}`)
+console.log(`Solution #${mostCostEffective} is the most cost effective.`)
