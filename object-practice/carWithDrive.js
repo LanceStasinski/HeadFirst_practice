@@ -8,13 +8,13 @@ const taxi = {
   mileage: 281341,
   started: false,
   start: () => {
-    started = true;
+    this.started = true;
   },
   stop: () => {
-    started = false;
+    this.started = false;
   },
   drive: () => {
-    if (started) {
+    if (this.started) {
       alert('Zoom zoom')
     } else {
       alert('You need to start the engine first')
