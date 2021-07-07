@@ -7,22 +7,40 @@ const taxi = {
   convertible: false,
   mileage: 281341,
   started: false,
-  start: () => {
-    this.started = true;
+  fuel: 0,
+  start: function () {
+    if (this.fuel === 0) {
+      alert('The car is on empty, fill up before starting')
+    } else {
+      this.started = true;
+    }
   },
-  stop: () => {
+  stop: function () {
     this.started = false;
   },
-  drive: () => {
+  drive: function () {
     if (this.started) {
-      alert('Zoom zoom')
+      if (this.fuel > 0) {
+        alert('Zoom zoom')
+        this.fuel = this.fuel - 1;
+      } else {
+        alert('Uh oh, out of fuel.');
+        this.stop()
+      }
     } else {
       alert('You need to start the engine first')
     }
+  },
+  addFuel: function (amount) {
+    this.fuel = this.fuel + amount;
   }
 }
 
-taxi.drive()
 taxi.start()
+taxi.drive()
+taxi.addFuel(2)
+taxi.start()
+taxi.drive()
+taxi.drive()
 taxi.drive()
 taxi.stop()
