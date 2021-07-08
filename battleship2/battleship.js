@@ -84,3 +84,26 @@ const controller = {
     return null
   }
 }
+
+function init() {
+  const fireButton = document.getElementById('fireButton')
+  fireButton.onclick = handleFireButton;
+  const guessInput = document.getElementById('guessInput')
+  guessInput.onkeypress = handleKeyPress;
+}
+
+function handleFireButton() {
+  const guessInput = document.getElementById('guessInput')
+  const guess = guessInput.value;
+  controller.processGuess(guess);
+  guessInput.value = '';
+}
+
+function handleKeyPress(e) {
+  const fireButton = document.getElementById('fireButton');
+  if (e.keyCode === 13) {
+    fireButton.click();
+    return false;
+  }
+}
+window.onload = init;
