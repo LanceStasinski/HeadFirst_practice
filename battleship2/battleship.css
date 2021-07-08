@@ -9,3 +9,10 @@ body {
   margin: auto;
   background: url('media/board.jpg') no-repeat;
 }
+
+#messageArea {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: rgb(83, 175, 19);
+}
