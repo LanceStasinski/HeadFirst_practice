@@ -122,7 +122,7 @@ const controller = {
         return row + column;
       }
     }
-    return null
+    return null;
   }
 }
 
