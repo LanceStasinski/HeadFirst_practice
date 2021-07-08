@@ -1,5 +1,5 @@
 const view = {
-  displayMessage: function () {
+  displayMessage: function (msg) {
     const messageArea = document.getElementById('messageArea')
     messageArea.innerHTML = msg;
   },
@@ -63,9 +63,9 @@ const model = {
     let newShipLocations = []
     for (let i = 0; i < this.shipLength; i++) {
       if (direction === 1) {
-        newShipLocations.push(row + '' + (col + i))
+        newShipLocations.push(row + '' + (column + i))
       } else {
-        newShipLocations.push((row + i) + '' + col)
+        newShipLocations.push((row + i) + '' + column)
       }
     }
     return newShipLocations;
