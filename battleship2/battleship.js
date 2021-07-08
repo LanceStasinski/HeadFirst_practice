@@ -17,9 +17,9 @@ const model = {
   boardSize: 7,
   numShips: 3,
   ships: [
-    {locations: [], hits: []},
-    {locations: [], hits: []},
-    {locations: [], hits: []}
+    {locations: [0, 0, 0], hits: ['', '', '']},
+    {locations: [0, 0, 0], hits: ['', '', '']},
+    {locations: [0, 0, 0], hits: ['', '', '']}
   ],
   shipsSunk: 0,
   shipLength: 3,
@@ -131,6 +131,7 @@ function init() {
   fireButton.onclick = handleFireButton;
   const guessInput = document.getElementById('guessInput')
   guessInput.onkeypress = handleKeyPress;
+  model.generateShipLocations();
 }
 
 function handleFireButton() {
