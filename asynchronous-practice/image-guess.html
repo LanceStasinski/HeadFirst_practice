@@ -5,7 +5,15 @@
     <meta charset="utf-8">
     <style> body {margin: 20px; }</style>
     <script>
-
+      window.onload = init;
+      function init() {
+        const image = document.getElementById('zero')
+        image.onclick = showAnswer()
+      }
+      function showAnswer() {
+        const image = document.getElementById('zero')
+        image.src = './media/zero.jpg';
+      }
     </script>
   </head>
   <body>
