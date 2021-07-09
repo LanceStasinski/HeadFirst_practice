@@ -20,14 +20,12 @@
         let name = image.id;
         name = `./media/${name}.jpg`;
         image.src = name;
-        image.onclick = hideAnswer;
+        setTimeout(hideAnswer, 2000, image);
       }
-      function hideAnswer(e) {
-        const image = e.target;
+      function hideAnswer(image) {
         let name = image.id;
         name = `./media/${name}blur.jpg`;
         image.src = name;
-        image.onclick = showAnswer;
       }
     </script>
   </head>
