@@ -20,6 +20,14 @@
         let name = image.id;
         name = `./media/${name}.jpg`;
         image.src = name;
+        image.onclick = hideAnswer;
+      }
+      function hideAnswer(e) {
+        const image = e.target;
+        let name = image.id;
+        name = `./media/${name}blur.jpg`;
+        image.src = name;
+        image.onclick = showAnswer;
       }
     </script>
   </head>
