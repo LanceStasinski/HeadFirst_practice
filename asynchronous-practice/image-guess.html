@@ -7,11 +7,11 @@
     <script>
       window.onload = init;
       function init() {
-        const image = document.getElementById('zero')
-        image.onclick = showAnswer()
+        let image = document.getElementById('zero');
+        image.onclick = showAnswer;
       }
       function showAnswer() {
-        const image = document.getElementById('zero')
+        let image = document.getElementById('zero')
         image.src = './media/zero.jpg';
       }
     </script>
