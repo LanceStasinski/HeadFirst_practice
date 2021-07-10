@@ -13,3 +13,11 @@ function processPassengers(passengers, testFunction) {
   }
   return true;
 }
+
+function checkNoFlyList(passenger) {
+  return (passenger.name === 'Evel')
+}
+
+function checkNotPaid(passenger) {
+  return (!passenger.paid)
+}
