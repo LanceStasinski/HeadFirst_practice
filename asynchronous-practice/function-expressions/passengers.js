@@ -21,3 +21,15 @@ function checkNoFlyList(passenger) {
 function checkNotPaid(passenger) {
   return (!passenger.paid)
 }
+
+var allCanFly = processPassengers(passengers, checkNoFlyList)
+
+if (!allCanFly) {
+  console.log("The plane can't take off: Passenger on no-fly list.")
+}
+
+var allPaid = processPassengers(passengers, checkNotPaid)
+
+if (!allPaid) {
+  console.log("The plane can't take off: Passengers haven't paid.")
+}
