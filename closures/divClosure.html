@@ -8,7 +8,15 @@
       div {padding: 10px;}
     </style>
     <script>
-
+      window.onload = function () {
+        let count = 0;
+        const div = document.getElementById('message')
+        const button = document.getElementById('clickme')
+        button.onclick = function () {
+          count ++;
+          div.innerHTML = `You clicked me ${count} times.`
+        }
+      }
     </script>
   </head>
   <body>
