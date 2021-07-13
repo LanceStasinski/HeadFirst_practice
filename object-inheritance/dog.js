@@ -39,6 +39,7 @@ ShowDog.prototype.gait = function() {
 ShowDog.prototype.groom = function() {
   console.log('groom')
 }
+ShowDog.prototype.constructor = ShowDog;
 
 const scottie = new ShowDog('Scottie', 'Scottish Terrier', 15, 'Cookie')
 
@@ -47,3 +48,4 @@ scottie.stack()
 scottie.bark()
 console.log(scottie.league)
 console.log(scottie.species)
+console.log(scottie.constructor)
